@@ -38,6 +38,8 @@ if (personalMovieDB.count < 10) {
 
 console.log(personalMovieDB);
 
+//--------------------------------------------------------------------
+
 let text = "Hello world!";
 
 function someFunc(text) {
@@ -60,11 +62,38 @@ function ret() {
 const anotherNum = ret();
 console.log(anotherNum);
 
-const logger = function() {
-	console.log("Hello");
+const logger = function () {
+  console.log("Hello");
 };
 
 logger();
 
-
 const calc = (a, b) => a + b;
+
+const usdCurr = 38;
+const eurCurr = 40;
+const discount = 0.9;
+
+function convert(amount, curr) {
+  return curr * amount;
+}
+
+function promotion(result) {
+  console.log(result * discount);
+}
+
+const res = convert(500, usdCurr);
+promotion(res);
+
+function test() {
+  for (let i = 0; i < 5; i++) {
+    console.log(i);
+    if (i === 3) return;
+  }
+	console.log("Done");
+}
+test();
+
+
+function doNothing() {}
+console.log(doNothing() === undefined);
