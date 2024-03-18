@@ -78,3 +78,69 @@ console.log(Math.round(number));
 const test1 = "12.2px";
 console.log(parseInt(test1));
 console.log(parseFloat(test1));
+
+function first() {
+  setTimeout(function () {
+    console.log(1);
+  }, 500);
+}
+function second() {
+  console.log(2);
+}
+first();
+second();
+
+function learnJS(lang, callback) {
+  console.log(`I am learning: ${lang}`);
+  callback();
+}
+learnJS("JavaScript", function () {
+  console.log("Done!");
+});
+
+const someObj = {
+  name: "test",
+  age: 35,
+  isMarried: false,
+  haveCars: ["bmw", "mercedes", "audi"],
+  kids: {
+    john: 6,
+    melisa: 12,
+    peter: 17,
+  },
+  job: "Software Engineer",
+};
+
+console.log(Object.keys(someObj));
+
+const options = {
+  name: "test",
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: "black",
+    background: "red",
+  },
+  makeTest: function () {
+    console.log("Test");
+  },
+};
+
+let counter = 0;
+for (let key in options) {
+  if (typeof options[key] === "object") {
+    console.log(`${key}`);
+    counter++;
+    for (let i in options[key]) {
+      console.log(`${i}: ${options[key][i]}`);
+    }
+  } else {
+    console.log(`${key}: ${options[key]}`);
+    counter++;
+  }
+}
+console.log(counter);
+console.log(Object.keys(options).length);
+
+const { border, bg } = options.colors;
+
