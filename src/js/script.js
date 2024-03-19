@@ -51,20 +51,20 @@ const personalMovieDB = {
         alert("Error");
       }
     }
-    this.genres.forEach(function (genre, i, genres) {
-      console.log(`Favorite genre #${i + 1} - ${genres[i]}`);
+    this.genres.forEach(function (genre, i) {
+      console.log(`Favorite genre #${i + 1} - ${genre}`);
     });
+  },
+  toggleVisibleNyDB: function () {
+    if (personalMovieDB.privat) {
+      personalMovieDB.privat = false;
+    } else {
+      personalMovieDB.privat = true;
+    }
   },
   showMyDB: function () {
     if (!personalMovieDB.privat) {
       console.log(personalMovieDB);
-    }
-  },
-  toggleVisibleNyDB: function () {
-    if (personalMovieDB.privat === true) {
-      personalMovieDB.privat = false;
-    } else {
-      personalMovieDB.privat = true;
     }
   },
 };
