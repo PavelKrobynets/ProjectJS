@@ -224,11 +224,36 @@
 //   internet = [...video, ...blogs, "facebook"];
 // console.log(internet);
 
-function log(a, b, c) {
-	console.log(a);
-	console.log(b);
-	console.log(c);
-}
+// function log(a, b, c) {
+//   console.log(a);
+//   console.log(b);
+//   console.log(c);
+// }
 
-const num = [2, 5, 7];
-log(...num);
+// const num = [2, 5, 7];
+// log(...num);
+
+// const array = ["a", "b"];
+// const newArray = [...array];
+
+// const obj = { one: 1, two: 2 };
+// const newObj = { ...obj };
+// console.log(newObj);
+
+const soldier = {
+  health: 400,
+  armor: 100,
+  sayHello: function () {
+    console.log("Hello!");
+  },
+};
+
+// const jhon = {
+// 	health: 100
+// }
+
+const jhon = Object.create(soldier);
+
+
+//   adding  properties to the already created object from parent object
+// Object.setPrototypeOf(jhon, soldier);  
