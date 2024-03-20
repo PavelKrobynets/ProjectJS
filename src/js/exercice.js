@@ -240,20 +240,65 @@
 // const newObj = { ...obj };
 // console.log(newObj);
 
-const soldier = {
-  health: 400,
-  armor: 100,
-  sayHello: function () {
-    console.log("Hello!");
-  },
-};
+// const soldier = {
+//   health: 400,
+//   armor: 100,
+//   sayHello: function () {
+//     console.log("Hello!");
+//   },
+// };
 
 // const jhon = {
 // 	health: 100
 // }
 
-const jhon = Object.create(soldier);
+// const jhon = Object.create(soldier);
 
+//   //adding  properties to the already created object from parent object
+// Object.setPrototypeOf(jhon, soldier);
 
-//   adding  properties to the already created object from parent object
-// Object.setPrototypeOf(jhon, soldier);  
+//to string
+
+console.log(typeof String(null));
+console.log(typeof String(4));
+
+console.log(typeof (5 + ""));
+
+const num = 5;
+console.log("https://instagram.com/catalog/" + num);
+
+const fontSize = 26 + "px";
+
+//To number
+
+console.log(typeof Number("4"));
+
+console.log(typeof +"5");
+
+console.log(typeof parseInt("15px", 10));
+
+let answer = +prompt("Some question", "");
+console.log(answer);
+
+//to boolean
+
+0,'',null,undefined.NaN; - false
+
+let switcher = null;
+
+if (switcher) {
+  console.log("Working");
+}
+
+switcher = 1;
+console.log();
+if (switcher) {
+  console.log("Working");
+}
+
+console.log(typeof Boolean("4"));
+
+console.log(typeof !!"4");
+
+let someVar = 4;
+console.log(someVar); //true
