@@ -257,48 +257,102 @@
 //   //adding  properties to the already created object from parent object
 // Object.setPrototypeOf(jhon, soldier);
 
-//to string
+// //to string
 
-console.log(typeof String(null));
-console.log(typeof String(4));
+// console.log(typeof String(null));
+// console.log(typeof String(4));
 
-console.log(typeof (5 + ""));
+// console.log(typeof (5 + ""));
 
-const num = 5;
-console.log("https://instagram.com/catalog/" + num);
+// const num = 5;
+// console.log("https://instagram.com/catalog/" + num);
 
-const fontSize = 26 + "px";
+// const fontSize = 26 + "px";
 
-//To number
+// //To number
 
-console.log(typeof Number("4"));
+// console.log(typeof Number("4"));
 
-console.log(typeof +"5");
+// console.log(typeof +"5");
 
-console.log(typeof parseInt("15px", 10));
+// console.log(typeof parseInt("15px", 10));
 
-let answer = +prompt("Some question", "");
-console.log(answer);
+// let answer = +prompt("Some question", "");
+// console.log(answer);
 
-//to boolean
+// //to boolean
 
-0,'',null,undefined.NaN; - false
+// 0,'',null,undefined.NaN; - false
 
-let switcher = null;
+// let switcher = null;
 
-if (switcher) {
-  console.log("Working");
-}
+// if (switcher) {
+//   console.log("Working");
+// }
 
-switcher = 1;
-console.log();
-if (switcher) {
-  console.log("Working");
-}
+// switcher = 1;
+// console.log();
+// if (switcher) {
+//   console.log("Working");
+// }
 
-console.log(typeof Boolean("4"));
+// console.log(typeof Boolean("4"));
 
-console.log(typeof !!"4");
+// console.log(typeof !!"4");
 
-let someVar = 4;
-console.log(someVar); //true
+// let someVar = 4;
+// console.log(someVar); //true
+// let number = 5; debugger;
+// function logNumber() {
+// 	let number = 4; debugger;
+//   console.log(number);
+// }
+
+// number = 6;
+// logNumber(); debugger;
+
+
+// first stupid thing in js !!!!!!!!!!!!!!!!!!!!!!!!
+// function createCounter() {
+//   let counter = 0;
+//   const myFunction = function () {
+//     return (counter += 1);
+//   };
+// 	console.log(counter);
+//   return myFunction;
+// }
+
+// const increment = createCounter();
+// const c1 = increment(),
+//   c2 = increment(),
+//   c3 = increment();
+// console.log(c1, c2, c3);
+
+// increment;
+// console.dir(increment);
+
+// let x = 5;
+// console.log(x++); // 5
+
+// console.log([] + false - null + true );  // NaN
+
+// let y = 1;
+// let x = y = 2;
+// console.log(x); //2
+
+// console.log([] + 1 + 2); //"12"
+
+// console.log("1"[0]);  //"1"
+
+// console.log(2 && 1 && null && undefined);  //null
+
+console.log(null || 2 && 3 || 4);
+
+let a = [1, 2, 3],
+b = [1, 2, 3];
+console.log(a == b); //
+console.log(+"infinity");
+console.log("Ёжик">"яблоко");
+
+console.log(!!(1 && 2) === (1 && 2));
+console.log(0 || "" || 2 || undefined || true || false);

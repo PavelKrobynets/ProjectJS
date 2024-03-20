@@ -22,5 +22,6 @@ module.exports = {
   rules: {
     "no-unused-vars": "off",
     "no-const-assign": "error",
+		"no-debugger":"off", // Debugging with debugger is allowed in development mode
   },
 };
