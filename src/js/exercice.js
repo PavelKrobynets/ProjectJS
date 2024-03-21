@@ -346,13 +346,14 @@
 
 // console.log(2 && 1 && null && undefined);  //null
 
-console.log(null || 2 && 3 || 4);
+// console.log(null || 2 && 3 || 4);
 
-let a = [1, 2, 3],
-b = [1, 2, 3];
-console.log(a == b); //
-console.log(+"infinity");
-console.log("Ёжик">"яблоко");
+// let a = [1, 2, 3],
+// b = [1, 2, 3];
+// console.log(a == b); //
+// console.log(+"infinity");
+// console.log("Ёжик">"яблоко");
 
-console.log(!!(1 && 2) === (1 && 2));
-console.log(0 || "" || 2 || undefined || true || false);
+// console.log(!!(1 && 2) === (1 && 2));
+// console.log(0 || "" || 2 || undefined || true || false);
+
