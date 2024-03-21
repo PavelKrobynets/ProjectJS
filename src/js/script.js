@@ -77,20 +77,41 @@
 // console.log(personalMovieDB.privat);
 // personalMovieDB.showMyDB();
 
-const box = document.getElementById("box");
-const buttons = document.getElementsByTagName("button");
-console.log(buttons[1]);
+const box = document.getElementById("box"),
+  buttons = document.getElementsByTagName("button"),
+  circles = document.getElementsByClassName("circle"),
+  hearts = document.querySelectorAll(".heart"),
+  oneHeart = document.querySelector(".heart"),
+  wrapper = document.querySelector(".wrapper");
 
-const circles = document.getElementsByClassName("circle"),
-  hearts = document.querySelectorAll(".heart");
+// box.style.backgroundColor = "blue";
+// box.style.width = "500px";
+// box.style.height = "375px";
+
+buttons[0].style.borderRadius = "25px";
+circles[0].style.backgroundColor = "black";
+
+box.style.cssText = "background-color: teal; width: 500px; height: 375px;";
+
+// for (let i = 0; i < hearts.length; i++) {
+// 	hearts[i].style.cssText = "background-color: red; height: 20px; width: 20px;"
+// }
 
 hearts.forEach((item) => {
-  console.log(item);
+  item.style.cssText = "background-color: red; height: 20px; width: 20px;";
 });
 
-// querySelector  - возвращает первый элемент,
-const oneHeart = document.querySelector(".heart");
-console.log(oneHeart);
+const div = document.createElement("div"),
+  text = document.createTextNode("I am a new DIV");
 
-const firstButton = document.querySelector("button");
-console.log(firstButton);
+div.classList.add("newDiv");
+
+// document.body.append(div);
+// document.body.appendChild(div);
+// document.querySelector('.wrapper').append(div);
+// wrapper.prepend(div);
+// hearts[0].before(div);
+
+circles[0].remove();
+
+hearts[0].replaceWith(circles[0]);
