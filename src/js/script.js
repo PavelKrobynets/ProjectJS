@@ -77,34 +77,34 @@
 // console.log(personalMovieDB.privat);
 // personalMovieDB.showMyDB();
 
-const box = document.getElementById("box"),
-  buttons = document.getElementsByTagName("button"),
-  circles = document.getElementsByClassName("circle"),
-  hearts = document.querySelectorAll(".heart"),
-  oneHeart = document.querySelector(".heart"),
-  wrapper = document.querySelector(".wrapper");
+// const box = document.getElementById("box"),
+//   buttons = document.getElementsByTagName("button"),
+//   circles = document.getElementsByClassName("circle"),
+//   hearts = document.querySelectorAll(".heart"),
+//   oneHeart = document.querySelector(".heart"),
+//   wrapper = document.querySelector(".wrapper");
 
 // box.style.backgroundColor = "blue";
 // box.style.width = "500px";
 // box.style.height = "375px";
 
-buttons[0].style.borderRadius = "25px";
-circles[0].style.backgroundColor = "black";
+// buttons[0].style.borderRadius = "25px";
+// circles[0].style.backgroundColor = "black";
 
-box.style.cssText = "background-color: teal; width: 500px; height: 375px;";
+// box.style.cssText = "background-color: teal; width: 500px; height: 375px;";
 
 // for (let i = 0; i < hearts.length; i++) {
 // 	hearts[i].style.cssText = "background-color: red; height: 20px; width: 20px;"
 // }
 
-hearts.forEach((item) => {
-  item.style.cssText = "background-color: red; height: 20px; width: 20px;";
-});
+// hearts.forEach((item) => {
+//   item.style.cssText = "background-color: red; height: 20px; width: 20px;";
+// });
 
-const div = document.createElement("div"),
-  text = document.createTextNode("I am a new DIV");
+// const div = document.createElement("div"),
+//   text = document.createTextNode("I am a new DIV");
 
-div.classList.add("newDiv");
+// div.classList.add("newDiv");
 
 // document.body.append(div);
 // document.body.appendChild(div);
@@ -112,6 +112,6 @@ div.classList.add("newDiv");
 // wrapper.prepend(div);
 // hearts[0].before(div);
 
-circles[0].remove();
+// circles[0].remove();
 
-hearts[0].replaceWith(circles[0]);
+// hearts[0].replaceWith(circles[0]);
