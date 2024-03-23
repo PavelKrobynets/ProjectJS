@@ -311,7 +311,6 @@
 // number = 6;
 // logNumber(); debugger;
 
-
 // first stupid thing in js !!!!!!!!!!!!!!!!!!!!!!!!
 // function createCounter() {
 //   let counter = 0;
@@ -357,3 +356,20 @@
 // console.log(!!(1 && 2) === (1 && 2));
 // console.log(0 || "" || 2 || undefined || true || false);
 
+let landmarks = [];
+landmarks.push("My house");
+landmarks.push("The bank");
+landmarks.push("The post office");
+landmarks.push("The town hall");
+landmarks.push("The park");
+landmarks.push("The library");
+landmarks.push("Friends house");
+
+// console.log(`All the landmarks ${landmarks}`);
+
+// for (let i = landmarks.length; i > 1; i--) {
+//   landmarks.pop();
+// 	console.log(landmarks);
+// }
+
+console.log(landmarks[Math.floor(Math.random() * landmarks.length)]);
