@@ -373,18 +373,41 @@
 // }
 // console.log(landmarks[Math.floor(Math.random() * landmarks.length)]);
 
-const btn = document.getElementById("btn");
-const secondBtn = document.getElementById("secondBtn");
+// const btn = document.getElementById("btn"),
+//   overlay = document.querySelector(".overlay");
+// const secondBtn = document.getElementById("secondBtn");
+// const thirdBtn = document.getElementById("thirdBtn");
 // btn.onclick = function () {
 //   alert("Click");
 // };
+// const deleteElement = (e) => {
+//   // e.target.remove();
+//   console.log(e.target);
+//   console.log(e.type);
+// };
 
-btn.addEventListener("click", () => {
-  alert("click");
-});
+// btn.addEventListener("click", () => {
+//   alert("click");
+// });
 // secondBtn.addEventListener("mouseenter", () => {
 //   alert("hover");
 // });
-secondBtn.addEventListener("mouseenter", () => {
-  secondBtn.style.backgroundColor = "red";
-});
+// secondBtn.addEventListener("mouseenter", () => {
+//   secondBtn.style.backgroundColor = "red";
+// });
+
+// thirdBtn.addEventListener("click", deleteElement);
+// overlay.addEventListener("click", deleteElement);
+
+// const link = document.querySelector("a");
+
+// link.addEventListener("click", (event) => {
+//   event.preventDefault();
+//   alert("You clicked on me!");
+// });
+
+// const btn = document.querySelectorAll('button');
+
+// btn.forEach(btn => {
+// 	btn.addEventListener("click", deleteElement, {once:true});
+// })
