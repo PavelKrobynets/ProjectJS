@@ -356,14 +356,14 @@
 // console.log(!!(1 && 2) === (1 && 2));
 // console.log(0 || "" || 2 || undefined || true || false);
 
-let landmarks = [];
-landmarks.push("My house");
-landmarks.push("The bank");
-landmarks.push("The post office");
-landmarks.push("The town hall");
-landmarks.push("The park");
-landmarks.push("The library");
-landmarks.push("Friends house");
+// let landmarks = [];
+// landmarks.push("My house");
+// landmarks.push("The bank");
+// landmarks.push("The post office");
+// landmarks.push("The town hall");
+// landmarks.push("The park");
+// landmarks.push("The library");
+// landmarks.push("Friends house");
 
 // console.log(`All the landmarks ${landmarks}`);
 
@@ -371,5 +371,20 @@ landmarks.push("Friends house");
 //   landmarks.pop();
 // 	console.log(landmarks);
 // }
+// console.log(landmarks[Math.floor(Math.random() * landmarks.length)]);
 
-console.log(landmarks[Math.floor(Math.random() * landmarks.length)]);
+const btn = document.getElementById("btn");
+const secondBtn = document.getElementById("secondBtn");
+// btn.onclick = function () {
+//   alert("Click");
+// };
+
+btn.addEventListener("click", () => {
+  alert("click");
+});
+// secondBtn.addEventListener("mouseenter", () => {
+//   alert("hover");
+// });
+secondBtn.addEventListener("mouseenter", () => {
+  secondBtn.style.backgroundColor = "red";
+});
