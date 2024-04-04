@@ -29,44 +29,52 @@ document.addEventListener("DOMContentLoaded", () => {
   genre.textContent = "Драма";
   poster.style.backgroundImage = `url("img/bg.jpg")`;
 
-  const movieList = () => {
-    movieDB.movies.sort();
-    for (let i = 0; i < movieDB.movies.length; i++) {
-      filmName[i].textContent = `${i + 1} ${movieDB.movies[i]}\n`;
-    }
-  };
+  function createMovieList(films, parent) {
+    parent.innerHTML = "";
 
-  form.addEventListener("submit", (event) => {
-    const li = document.createElement("li"),
-		newMovie = input.value;
-    event.preventDefault();
-    if (newMovie === "") {
-      alert("Введите название фильма!");
-      return false;
-    }
+    movieDB.movies.forEach((film, i) => {
+      parent.innerHTML += `
+			<li class="promo__interactive-item">${i + 1} ${film}
+			</li>
+			`;
+    });
+  }
 
-    movieDB.movies.push(newMovie);
-		console.log(movieDB.movies);
-    li.appendChild(document.createTextNode(newMovie));
-    li.classList.add("promo__interactive-item");
-    ul.appendChild(li);
-    input.value = "";
-  });
+	form.addEventListener("submit", (event) => {
+		event.preventDefault();
+		
+		const newFilm = input.ariaValueMax,
+		favorite = checkBox.checked;
+		movieDB.movies.push(newFilm);
+		movieDB.movies.sort();
+	})
 
-  movieList();
-  console.log(movieDB.movies);
+  createMovieList(movieDB.movies, ul);
 
-  // li.appendChild(document.createTextNode(``));
-  //       li.classList.add("promo__interactive-item");
-  //       ul.appendChild(li);
-  // 			movieList();
-
-  // ul.appendChild(li);
-  // movieDB.movies.forEach((film, i) => {
-  //   ul.innerHTML = +`
-  // 	<li class="promo__interactive-item">${i + 1} ${movieDB.movies[i]}
-  // 	<div class="delete"></div>
-  // 	</li>
-  // 	`;
-  // });
 });
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!! wrong way
+// function movieList() {
+// 	movieDB.movies.sort();
+// 	movieDB.movies.forEach((film, i) => {
+// 		filmName[i].textContent = `${i + 1} ${movieDB.movies[i]}\n`;
+// 	});
+// }
+
+// form.addEventListener("submit", (event) => {
+// 	const li = document.createElement("li"),
+// 		newMovie = input.value;
+// 	event.preventDefault();
+// 	if (newMovie === "") {
+// 		alert("Введите название фильма!");
+// 		return false;
+// 	}
+
+// 	movieDB.movies.push(newMovie);
+// 	movieDB.movies.sort();
+// 	li.appendChild(document.createTextNode(newMovie));
+// 	li.classList.add("promo__interactive-item");
+// 	ul.appendChild(li);
+// 	input.value = "";
+// 	console.log(filmName);
+// });
