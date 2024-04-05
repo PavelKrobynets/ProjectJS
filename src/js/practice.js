@@ -11,9 +11,11 @@ document.addEventListener("DOMContentLoaded", () => {
     ],
   };
 
-  document.querySelectorAll(".promo__adv img").forEach((item) => {
-    item.remove();
-  });
+  const deleteAdv = (arr) => {
+    arr.forEach((item) => {
+      item.remove();
+    });
+  };
 
   const div = document.createElement("div"),
     poster = document.querySelector(".promo__bg"),
@@ -26,8 +28,14 @@ document.addEventListener("DOMContentLoaded", () => {
     input = form.querySelector(".adding__input"),
     checkBox = form.querySelector("[type='checkbox']");
 
-  genre.textContent = "Драма";
-  poster.style.backgroundImage = `url("img/bg.jpg")`;
+  const makeChanges = () => {
+    genre.textContent = "Драма";
+    poster.style.backgroundImage = `url("img/bg.jpg")`;
+  };
+
+  const sortArr = (arr) => {
+    arr.sort();
+  };
 
   function createMovieList(films, parent) {
     parent.innerHTML = "";
@@ -40,17 +48,26 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-	form.addEventListener("submit", (event) => {
-		event.preventDefault();
-		
-		const newFilm = input.ariaValueMax,
-		favorite = checkBox.checked;
-		movieDB.movies.push(newFilm);
-		movieDB.movies.sort();
-	})
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
 
+    const newFilm = input.value,
+      favorite = checkBox.checked;
+
+			if (newFilm) {
+				movieDB.movies.push(newFilm);
+				sortArr(movieDB.movies);
+				createMovieList(movieDB.movies, ul);
+					}else {
+						alert("Edit mobie name")
+					}
+		event.target.reset();
+  });
+
+	deleteAdv(document.querySelectorAll(".promo__adv img"));
+	makeChanges();
+	sortArr(movieDB.movies);
   createMovieList(movieDB.movies, ul);
-
 });
 
 // !!!!!!!!!!!!!!!!!!!!!!!!!!!!! wrong way
