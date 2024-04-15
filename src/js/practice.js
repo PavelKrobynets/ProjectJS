@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function createMovieList(films, parent) {
     parent.innerHTML = "";
-		sortArr(films);
+    sortArr(films);
 
     movieDB.movies.forEach((film, i) => {
       parent.innerHTML += `
@@ -68,9 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if (newFilm.length > 21) {
         newFilm = `${newFilm.substring(0, 22)}...`;
       }
-			favorite ? console.log("Adding favorite movie") : null;
+      favorite ? console.log("Adding favorite movie") : null;
       movieDB.movies.push(newFilm);
-      sortArr(movieDB.movies);
       createMovieList(movieDB.movies, ul);
     } else {
       alert("Edit mobie name");

@@ -527,3 +527,38 @@
 // const  result = getAverageProgressByRecurtion(students);
 // console.log(`The average progress is ${result[0]} out of ${result[1]}`);
 // console.log(result);
+
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+//touchstart
+//touchmove
+//touchend
+//touchenter
+//touchleave
+
+// window.addEventListener("DOMContentLoaded", () => {
+//   const title = document.querySelector(".promo__title");
+
+//   title.addEventListener("touchstart", (e) => {
+//     e.preventDefault();
+//     console.log("Start");
+// 		console.log(e.touches);
+// 		console.log(e.targetTouches);
+//   });
+
+// title.addEventListener("touchmove", (e) => {
+//   e.preventDefault();
+//   console.log("Move");
+// });
+
+// title.addEventListener("touchend", (e) => {
+//   e.preventDefault();
+//   console.log("End");
+// });
+// });
+
+// touches
+// targetTouches  -- пальці які взаємодіють саме з цим елементом
+// changedTouches-- коли користувач перемістив пальці від одного до іншого елемента
+
+// const lii = document.querySelectorAll("li");
+// console.log(lii);
