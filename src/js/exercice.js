@@ -587,17 +587,107 @@
 // console.log(block?.textContent);
 // console.log(1 + 2);
 
-const userData = {
-  name: "Ivan",
-  age: null,
-  say: function () {
-    console.log("hello");
-  },
-};
-userData.say();
-userData.hay?.();
+// const userData = {
+//   name: "Ivan",
+//   age: null,
+//   say: function () {
+//     console.log("hello");
+//   },
+// };
+// userData.say();
+// userData.hay?.();
 // if(userData && userData.skills && userData.skills.js){
 // 	console.log(userData.skills.js);
 // }
 
-console.log(userData.skills?.js);
+// console.log(userData.skills?.js);
+
+// const user = {
+//   name: "Alex",
+//   surname: "Smith",
+//   birthday: "20/04/1998",
+//   showMyPublicData() {
+//     console.log(`${this.name} ${this.surname}`);
+//   },
+// };
+// console.log(user);
+
+// const userMap = new Map(Object.entries(user));
+// console.log(userMap);
+
+// const newUserObject = Object.fromEntries(userMap);
+// console.log(newUserObject);
+
+// const shops = [{ rise: 500 }, { oil: 200 }, { bread: 50 }];
+
+// const budget = [5000, 2000, 750];
+// const map = new Map([[{ paper: 400 }, 8000]]);
+
+// shops.forEach((shop, i) => {
+//   map.set(shop, budget[i]);
+// });
+// console.log(map.get(shops[0]));
+// console.log(map.has(shops[0]));
+// map.delete(shops[0]);
+// map.clear;
+// map.size;
+// map.keys();
+// console.log(map);
+
+// const goods = [];
+// for (let shop of map.keys()) {
+//   console.log(shop);
+//   goods.push(Object.keys(shop)[0]);
+// }
+// console.log(goods);
+
+// for (let price of map.values()) {
+//   console.log(price);
+// }
+
+// for (let [shop, price] of map.entries()) {
+//   console.log(shop ,price);
+// }
+
+// map.forEach((value, key, map) => {
+//   console.log(key, value);
+// });
+
+// const arr = ["Alex", "Ann", "Peter", "Alex", "Nolan"];
+// const set = new Set(arr);
+
+// set.add("Igor");
+
+// console.log(set);
+
+// set.delete();
+// set.has();
+// set.clear();
+// set.size();
+
+// for (let value of set){
+// 	console.log(value);
+// }
+
+// set.forEach((value, valueAgain, set) => {
+// console.log(value, valueAgain);
+// })
+
+// console.log(set.values());
+
+// function unique(arr) {
+//   return Array.from(new Set(arr));
+// }
+
+// console.log(unique(arr));
+
+// const bigint = 564654564123468823123n;
+
+
+// console.log(2n === 2);
+
+// let bigint = 1n;
+// let number = 2;
+
+// console.log(bigint + BigInt(number));
+// console.log(Number(bigint) + number);
