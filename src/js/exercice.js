@@ -683,7 +683,6 @@
 
 // const bigint = 564654564123468823123n;
 
-
 // console.log(2n === 2);
 
 // let bigint = 1n;
@@ -691,3 +690,41 @@
 
 // console.log(bigint + BigInt(number));
 // console.log(Number(bigint) + number);
+
+// const btns = document.querySelectorAll("button"),
+//   wrapper = document.querySelector(".btn-block");
+
+// console.log(btns[0].classList.length);
+// console.log(btns[0].classList.item(0));
+// console.log(btns[1].classList.add("red", "bold"));
+// console.log(btns[0].classList.remove("blue"));
+// console.log(btns[0].classList.toggle("blue"));
+
+// if (btns[1].classList.contains("red")) {
+//   console.log("red");
+// }
+
+// btns[1].addEventListener("click", () => {
+// if (!btns[1].classList.contains("yellow")) {
+//   btns[1].classList.add("yellow");
+// } else {
+// 	btns[1].classList.remove("yellow");
+// }
+// 	btns[1].classList.toggle('yellow');
+// });
+
+// btns.forEach((btn) => {
+// 	btn.addEventListener("click", () => {
+// 		btn.classList.toggle('yellow');
+// 	})
+// })
+
+// wrapper.addEventListener("click", (event) => {
+//   if (event.target && event.target.tagName == "BUTTON") {
+//     console.log("some text");
+//   }
+// });
+
+// const btn = document.createElement("button");
+// btn.classList.add("yellow");
+// wrapper.append(btn);
