@@ -4,13 +4,12 @@ import { path } from "./gulp/config/path.js";
 import { plugins } from "./gulp/config/plugins.js";
 
 global.app = {
-	isBuild: process.argv.includes('--build'),
-	isDev: !process.argv.includes('--build'),
-	path: path,
-	gulp: gulp,
-	plugins: plugins,
-
-}
+  isBuild: process.argv.includes("--build"),
+  isDev: !process.argv.includes("--build"),
+  path: path,
+  gulp: gulp,
+  plugins: plugins,
+};
 
 import { copy } from "./gulp/tasks/copy.js";
 import { reset } from "./gulp/tasks/reset.js";
@@ -24,25 +23,23 @@ import { zip } from "./gulp/tasks/zip.js";
 import { libsCopy } from "./gulp/tasks/copy.js";
 import { icons } from "./gulp/tasks/copy.js";
 
-
 function watcher() {
-	gulp.watch(path.watch.files, copy);
-	gulp.watch(path.watch.html, html);
-	gulp.watch(path.watch.scss, scss);
-	gulp.watch(path.watch.js, js);
-	gulp.watch(path.watch.images, images);
+  gulp.watch(path.watch.files, copy);
+  gulp.watch(path.watch.html, html);
+  gulp.watch(path.watch.scss, scss);
+  gulp.watch(path.watch.js, js);
+  gulp.watch(path.watch.images, images);
 }
-export { svgSprive }
+export { svgSprive };
 
+const mainTasks = gulp.parallel(copy, html, libsCopy, scss, js, images, icons);
 
-const mainTasks = gulp.parallel(copy, html, libsCopy, scss, js, images);
-
-const dev = gulp.series(reset, mainTasks, icons , gulp.parallel(watcher, server));
+const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 
-export { dev }
-export { build }
-export { deployZIP }
+export { dev };
+export { build };
+export { deployZIP };
 
-gulp.task('default', dev);
+gulp.task("default", dev);
