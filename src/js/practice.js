@@ -115,31 +115,52 @@
 // user = null;
 // console.log(map.has());
 
-let cache = new WeakMap();
+// let cache = new WeakMap();
 
-function cacheUser(user) {
-  if (!cache.has(user)) cache.set(user, Date.now());
-  return cache.get(user);
-}
+// function cacheUser(user) {
+//   if (!cache.has(user)) cache.set(user, Date.now());
+//   return cache.get(user);
+// }
 
-let lena = { name: "Elena" },
-  alex = { name: "Alex" };
+// let lena = { name: "Elena" },
+//   alex = { name: "Alex" };
 
-cacheUser(lena);
-cacheUser(alex);
+// cacheUser(lena);
+// cacheUser(alex);
 
-lena = null;
-console.log(cache.has(lena));
-console.log(cache.has(alex));
+// lena = null;
+// console.log(cache.has(lena));
+// console.log(cache.has(alex));
 
-let messages = [
-  { text: "Hello", from: "Jhon" },
-  { text: "World", from: "Helen" },
-  { text: "!!", from: "Amanda" },
-  { text: "...", from: "Michel" },
-];
+// let messages = [
+//   { text: "Hello", from: "Jhon" },
+//   { text: "World", from: "Helen" },
+//   { text: "!!", from: "Amanda" },
+//   { text: "...", from: "Michel" },
+// ];
 
-let readMessages = new WeakSet();
+// let readMessages = new WeakSet();
 
-readMessages.add(messages[0]);
-readMessages.add(messages[1]);
+// readMessages.add(messages[0]);
+// readMessages.add(messages[1]);
+
+// const now1 = new Date(2020, 5, 1, 20);
+// console.log(now1);
+
+// const now2 = new Date(0);
+// console.log(now2);
+
+const now = new Date();
+console.log(now);
+
+// console.log(now.getFullYear());
+// console.log(now.getMonth());
+// console.log(now.getDate());
+// console.log(now.getHours());
+// console.log(now.getDay());
+
+// console.log(now.getTime());
+// console.log(now.getTimezoneOffset());
+
+now.setHours(18);
+console.log(now);
