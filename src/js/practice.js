@@ -187,27 +187,115 @@
 //     console.log(`Hello ${this.name}`);
 //   };
 // }
-class User {
-	constructor(name, id){
-    this.name = name;
-    this.id = id;
-    this.human = true;
-  }
-  hello() {
-    console.log(`Hello ${this.name}`);
-  }
-	exit(){
-		console.log(`User ${this.name} left`);
-	}
-}
+// class User {
+// 	constructor(name, id){
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//   }
+//   hello() {
+//     console.log(`Hello ${this.name}`);
+//   }
+// 	exit(){
+// 		console.log(`User ${this.name} left`);
+// 	}
+// }
 
 // User.prototype.exit = function (name) {
 //   console.log(`User ${this.name} left`);
 // };
 
-const ivan = new User("Ivan", 28);
-const alex = new User("Alex", 20);
+// const ivan = new User("Ivan", 28);
+// const alex = new User("Alex", 20);
 
-console.log(ivan);
-console.log(alex);
-ivan.hello();
+// console.log(ivan);
+// console.log(alex);
+// ivan.hello();
+
+// function showThis(a, b) {
+//   console.log(this);
+//   function sum() {
+//     console.log(this);
+//     return a + b;
+//   }
+//   console.log(sum());
+// }
+// showThis(5, 2);
+
+// const obj = {
+// 	a: 20,
+// 	b: 15,
+// 	sum: function(){
+// 		console.log(this);
+// 	}
+// };
+// obj.sum();
+
+// class User {
+// 	constructor(name, id){
+//     this.name = name;
+//     this.id = id;
+//     this.human = true;
+//   }
+//   hello() {
+//     console.log(`Hello ${this.name}`);
+//   }
+// 	exit(){
+// 		console.log(`User ${this.name} left`);
+// 	}
+
+// class User1 {
+//   name = String;
+//   id = Number;
+//   human = Boolean;
+// }
+
+// let igor = new User1();
+// igor.name = "Igor";
+// igor.id = 47;
+// igor.human = true;
+
+// console.log(igor);
+
+// function User(name, id) {
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+// 	this.hello = function(){
+// 		console.log(`Hello i'm ${this.name}`);
+// 	}
+// }
+
+// let ivan = new User("Ivan", 23);
+
+// function sayName(){
+// 	console.log(this);
+// 	console.log(this.name);
+// }
+
+// const user = {
+// 	name: 'John'
+// }
+
+// sayName.call(user);
+// sayName.apply(user);
+
+const btn = document.querySelector(".btn1");
+
+btn.addEventListener("click", function () {
+  console.log(this);
+});
+
+const obj = {
+	num: 5,
+	sayNumber: function(){
+		const say = () => {
+			console.log(this);
+		}
+		say();
+	}
+}
+
+obj.sayNumber();
+
+const double = (a) => a * 2 ;
