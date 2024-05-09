@@ -150,8 +150,8 @@
 // const now2 = new Date(0);
 // console.log(now2);
 
-const now = new Date();
-console.log(now);
+// const now = new Date();
+// console.log(now);
 
 // console.log(now.getFullYear());
 // console.log(now.getMonth());
@@ -162,16 +162,52 @@ console.log(now);
 // console.log(now.getTime());
 // console.log(now.getTimezoneOffset());
 
-now.setHours(18);
-console.log(now);
+// now.setHours(18);
+// console.log(now);
 
-let start = new Date();
+// let start = new Date();
 
-for (let i = 0; i < 100000; i++){
-	let some = i ** 3;
+// for (let i = 0; i < 100000; i++){
+// 	let some = i ** 3;
+// }
+
+// let end = new Date();
+
+// alert(`${end - start} miliseconds`);
+// console.log(end);
+
+// const num = new Number(3);
+// console.log(num);
+
+// function User(name, id) {
+//   this.name = name;
+//   this.id = id;
+//   this.human = true;
+//   this.hello = function () {
+//     console.log(`Hello ${this.name}`);
+//   };
+// }
+class User {
+	constructor(name, id){
+    this.name = name;
+    this.id = id;
+    this.human = true;
+  }
+  hello() {
+    console.log(`Hello ${this.name}`);
+  }
+	exit(){
+		console.log(`User ${this.name} left`);
+	}
 }
 
-let end = new Date();
+// User.prototype.exit = function (name) {
+//   console.log(`User ${this.name} left`);
+// };
 
-alert(`${end - start} miliseconds`);
-console.log(end);
+const ivan = new User("Ivan", 28);
+const alex = new User("Alex", 20);
+
+console.log(ivan);
+console.log(alex);
+ivan.hello();
