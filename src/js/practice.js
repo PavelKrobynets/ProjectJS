@@ -389,4 +389,34 @@ const person = {
 };
 const clone = JSON.parse(JSON.stringify(person));
 console.log(clone);
+
+
+const firstInput = document.querySelector(".firstInput"),
+  secondInput = document.querySelector(".secondInput");
+
+firstInput.addEventListener("input", () => {
+  const request = new XMLHttpRequest();
+  request.open("GET", "js/current.json");
+  request.setRequestHeader("Content-type", "application/json; charset=utf-8");
+  request.send();
+
+  // request.addEventListener("readystatechange", () => {
+  //   if (request.readyState === 4 && request.status === 200) {
+  //     console.log(request.response);
+  //     const data = JSON.parse(request.response);
+  //     secondInput.value = (+firstInput.value / data.current.usd).toFixed(2);
+  //   } else {
+  // 		secondInput.value = `${request.statusText }`
+  // 	}
+  // });
+  request.addEventListener("load", () => {
+    if (request.status === 200) {
+      console.log(request.response);
+      const data = JSON.parse(request.response);
+      secondInput.value = (+firstInput.value / data.current.usd).toFixed(2);
+    } else {
+      secondInput.value = `${request.statusText}`;
+    }
+  });
+});
 */

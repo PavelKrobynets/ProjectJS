@@ -316,3 +316,12 @@ button {
 .yellow {
   background-color: yellow;
 }
+
+.calc{
+	margin: 10px;
+	width: 200px;
+	height: 100px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}

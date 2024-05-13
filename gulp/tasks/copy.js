@@ -16,3 +16,9 @@ export const icons = () => {
     .src(app.path.src.icons)
     .pipe(app.gulp.dest(app.path.build.icons));
 };
+
+export const json = () => {
+	return app.gulp
+	.src(app.path.src.json)
+	.pipe(app.gulp.dest(app.path.build.js))
+}
