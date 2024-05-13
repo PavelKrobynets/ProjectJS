@@ -364,7 +364,7 @@ for (let letter = 0; letter != input.length; letter++) {
   }
 }
 console.log(output);
-*/
+
 
 const log = function (a, b, ...rest) {
   console.log(a, b, rest);
@@ -377,3 +377,15 @@ function calcOrDouble(number, basis = 2) {
 }
 
 calcOrDouble(3, 5);
+*/
+
+const person = {
+  name: "John Doe",
+  tel: "+74444444444",
+  parents: {
+    father: "Jonh Smith",
+    mother: "Mary Johnson",
+  },
+};
+const clone = JSON.parse(JSON.stringify(person));
+console.log(clone);
