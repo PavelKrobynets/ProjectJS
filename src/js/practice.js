@@ -377,7 +377,7 @@ function calcOrDouble(number, basis = 2) {
 }
 
 calcOrDouble(3, 5);
-*/
+
 
 const person = {
   name: "John Doe",
@@ -389,3 +389,4 @@ const person = {
 };
 const clone = JSON.parse(JSON.stringify(person));
 console.log(clone);
+*/
