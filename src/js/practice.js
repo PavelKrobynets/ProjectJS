@@ -330,4 +330,50 @@ const square = new Rectangle(15, 15);
 const long = new Rectangle(20, 100);
 console.log(square.calcArea());
 console.log(long.calcArea());
+
+
+var alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя";
+var randomString = "";
+randomString = alphabet[Math.floor(Math.random() * alphabet.length)];
+console.log(randomString);
+while (randomString.length < 7) {
+  randomString += alphabet[Math.floor(Math.random() * alphabet.length)];
+}
+console.log(randomString);
+
+var input = "javascript is awesome";
+var output = "";
+
+for (let letter = 0; letter != input.length; letter++) {
+  switch (input[letter]) {
+    case "a":
+      output += "4";
+      continue;
+    case "i":
+      output += "1";
+      continue;
+    case "e":
+      output += "3";
+      continue;
+    case "o":
+      output += "0";
+      continue;
+    default:
+      output += input[letter];
+      continue;
+  }
+}
+console.log(output);
 */
+
+const log = function (a, b, ...rest) {
+  console.log(a, b, rest);
+};
+
+log("basic", "rest", "operator", "usage");
+
+function calcOrDouble(number, basis = 2) {
+  console.log(number * basis);
+}
+
+calcOrDouble(3, 5);
