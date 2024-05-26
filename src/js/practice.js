@@ -452,7 +452,6 @@ firstInput.addEventListener("input", () => {
 	}).finally(() => {
 		console.log("Finally");
 	})
-	*/
 
   const test = (time) => {
     return new Promise((resolve) => {
@@ -471,4 +470,42 @@ firstInput.addEventListener("input", () => {
 	Promise.all([test(1000), test(2000)]).then(() => {
 		console.log("All");
 	})
+	
+
+	//filter
+
+	const names = ['Ivan', "Ann", "Vova", "Karina" ];
+
+	const shortNames = names.filter(name => name.length < 5);
+	console.log(shortNames);
+	
+  // map
+  let answers = ["VovA", "AnNa", "IgOr"];
+  answers = answers.map((item) => item.toLowerCase());
+  console.log(answers);
+	
+  const some = [4, "someString", "asdasdas"];
+  console.log(some.some((item) => typeof item === "number"));
+  console.log(some.every((item) => typeof item === "number"));
+	
+  //reduce
+	
+  const arr = [4, 5, 1, 3, 2, 6];
+	const res = arr.reduce((sum, current) => sum + current);
+	console.log(res);
+	
+	const arr = ["pepper", "apple", 2, "orange"];
+	const res = arr.reduce((sum, current) => sum + current, 0);
+	console.log(res);
+	*/
+
+  const obj = {
+    igor: "persone",
+    ann: "persone",
+    dog: "animal",
+    cat: "animal",
+  };
+	const arr = Object.entries(obj)
+	.filter(item => item[1] === "persone");
+	console.log(arr);
 });
