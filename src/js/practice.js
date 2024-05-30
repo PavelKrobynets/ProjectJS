@@ -497,10 +497,9 @@ firstInput.addEventListener("input", () => {
 	const arr = ["pepper", "apple", 2, "orange"];
 	const res = arr.reduce((sum, current) => sum + current, 0);
 	console.log(res);
-	*/
-
+	
   const obj = {
-    igor: "persone",
+		igor: "persone",
     ann: "persone",
     dog: "animal",
     cat: "animal",
@@ -508,4 +507,40 @@ firstInput.addEventListener("input", () => {
 	const arr = Object.entries(obj)
 	.filter(item => item[1] === "persone");
 	console.log(arr);
+	
+  localStorage.setItem("numeber", "5");
+  console.log(localStorage.getItem("numeber"));
+  localStorage.removeItem("number");
+  localStorage.clear();
+	*/
+  const checkbox = document.querySelector("#checkbox"),
+    form = document.querySelector("form"),
+    change = document.querySelector("#color");
+
+  if (localStorage.getItem("isChecked")) {
+    checkbox.checked = true;
+  }
+
+  checkbox.addEventListener("change", () => {
+    localStorage.setItem("isChecked", true);
+  });
+
+  change.addEventListener("click", () => {
+    if (localStorage.getItem("bg") === "changed") {
+      localStorage.removeItem("bg");
+      form.style.backgroundColor = "white";
+    } else {
+      localStorage.setItem("bg", "changed");
+      form.style.backgroundColor = "yellow";
+    }
+  });
+
+  const persone = {
+    name: "Alex",
+    age: 25,
+  };
+
+  const seralizedPerson = JSON.stringify(persone);
+  localStorage.setItem("Alex", seralizedPerson);
+	console.log(JSON.parse(localStorage.getItem('Alex')));
 });
