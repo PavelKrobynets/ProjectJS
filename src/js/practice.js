@@ -512,35 +512,46 @@ firstInput.addEventListener("input", () => {
   console.log(localStorage.getItem("numeber"));
   localStorage.removeItem("number");
   localStorage.clear();
-	*/
   const checkbox = document.querySelector("#checkbox"),
-    form = document.querySelector("form"),
-    change = document.querySelector("#color");
-
+	form = document.querySelector("form"),
+	change = document.querySelector("#color");
+	
   if (localStorage.getItem("isChecked")) {
-    checkbox.checked = true;
+		checkbox.checked = true;
   }
-
+	
   checkbox.addEventListener("change", () => {
-    localStorage.setItem("isChecked", true);
+		localStorage.setItem("isChecked", true);
   });
-
+	
   change.addEventListener("click", () => {
-    if (localStorage.getItem("bg") === "changed") {
-      localStorage.removeItem("bg");
+		if (localStorage.getItem("bg") === "changed") {
+			localStorage.removeItem("bg");
       form.style.backgroundColor = "white";
     } else {
-      localStorage.setItem("bg", "changed");
+			localStorage.setItem("bg", "changed");
       form.style.backgroundColor = "yellow";
     }
   });
-
+	
   const persone = {
-    name: "Alex",
+		name: "Alex",
     age: 25,
   };
-
+	
   const seralizedPerson = JSON.stringify(persone);
   localStorage.setItem("Alex", seralizedPerson);
 	console.log(JSON.parse(localStorage.getItem('Alex')));
+	
+  const ans = prompt("Enter your name");
+  const reg = /n/ig;
+  console.log(ans.search(reg));
+	console.log(ans.match(reg));
+  const pass = prompt("Password");
+  console.log(pass.replace(/./g, "*"));
+	console.log('12-34-567'.replace(/-/g, ':'));
+	*/
+const ans = prompt("Enter your name"),
+reg = /n/ig;
+console.log(reg.test(ans));
 });
