@@ -550,8 +550,29 @@ firstInput.addEventListener("input", () => {
   const pass = prompt("Password");
   console.log(pass.replace(/./g, "*"));
 	console.log('12-34-567'.replace(/-/g, ':'));
+	const ans = prompt("Enter your name"),
+	reg = /n/ig;
+	console.log(ans.test(reg));
+  const ans = prompt("Enter your name"),
+	reg = /\d/;
+  console.log(ans.match(reg));
+	
+	const str = 'My name is R2D2';
+	console.log(str.match(/\w\d\w\d/));
 	*/
-const ans = prompt("Enter your name"),
-reg = /n/ig;
-console.log(reg.test(ans));
+
+	const person = {
+		name: "Alex",
+		age: 25,
+
+		get userAge() {
+			return this.age
+		},
+
+		set userAge(num) {
+			this.age = num;
+		}
+	}
+	console.log(person.userAge);
+	console.log(person.userAge = 30);
 });
