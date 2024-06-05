@@ -559,20 +559,85 @@ firstInput.addEventListener("input", () => {
 	
 	const str = 'My name is R2D2';
 	console.log(str.match(/\w\d\w\d/));
-	*/
-
+	
 	const person = {
 		name: "Alex",
 		age: 25,
-
+		
 		get userAge() {
 			return this.age
 		},
-
+		
 		set userAge(num) {
 			this.age = num;
 		}
 	}
 	console.log(person.userAge);
 	console.log(person.userAge = 30);
+	
+  function User(name, age) {
+		this.name = name;
+    let userAge = age;
+		
+    this.say = function () {
+			console.log(`User name ${this.name}, and his age is ${userAge}`);
+    };
+    this.getAge = function () {
+			return userAge;
+    };
+    this.setAge = function (age) {
+			if (typeof age === "number" && age > 0 && age < 100) {
+				userAge = age;
+      } else {
+				console.log("Error");
+      }
+    };
+  }
+	
+  const igor = new User("Igor", 21);
+  console.log(igor.name, igor.getAge());
+  igor.setAge(30);
+	igor.setAge(300);
+  igor.say();
+	*/
+
+  class User {
+    constructor(name, age) {
+      this.name = name;
+      this._age = age;
+    }
+		#surname = "Ignatiev";
+		get surname(){
+			return this.#surname;
+		}
+		set surname(surname){
+			if (typeof surname === "string" && surname.length < 15) {
+				this.#surname = surname
+			} else {
+				console.log('Cant tipe taht surname');
+			}
+		}
+
+    say() {
+      console.log(`User name ${this.name} ${this.#surname}, and his age is ${this._age}`);
+    }
+
+    get age() {
+      return this._age;
+    }
+
+    set age(age) {
+      if (typeof age === "number" && age > 0 && age < 100) {
+        this._age = age;
+      } else {
+        console.log("Error");
+      }
+    }
+  }
+	const igor = new User("Igor", 25);
+	console.log(igor.age, igor.name);
+	igor.age = 31;
+	igor.surname = 'Topaz';
+	console.log(igor.surname);
+	console.log(igor.age);
 });
