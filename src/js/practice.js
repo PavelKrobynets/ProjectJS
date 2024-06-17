@@ -599,8 +599,7 @@ firstInput.addEventListener("input", () => {
   igor.setAge(30);
 	igor.setAge(300);
   igor.say();
-	*/
-
+	
   class User {
     constructor(name, age) {
       this.name = name;
@@ -615,29 +614,71 @@ firstInput.addEventListener("input", () => {
 				this.#surname = surname
 			} else {
 				console.log('Cant tipe taht surname');
-			}
 		}
+	}
+	
+	say() {
+		console.log(`User name ${this.name} ${this.#surname}, and his age is ${this._age}`);
+	}
+	
+	get age() {
+		return this._age;
+	}
+	
+	set age(age) {
+		if (typeof age === "number" && age > 0 && age < 100) {
+			this._age = age;
+		} else {
+			console.log("Error");
+	}
+}
+}
+const igor = new User("Igor", 25);
+console.log(igor.age, igor.name);
+igor.age = 31;
+igor.surname = 'Topaz';
+console.log(igor.surname);
+console.log(igor.age);
 
-    say() {
-      console.log(`User name ${this.name} ${this.#surname}, and his age is ${this._age}`);
-    }
+try{
+	console.log("Normal");
+	console.log(a);
+	console.log("Continue");
+}
+catch(e){
+	console.log(e);
+}
+*/
 
-    get age() {
-      return this._age;
-    }
+  const data = [
+    {
+      id: "box",
+      tag: "div",
+    },
+    {
+      id: "",
+      tag: "nav",
+    },
+    {
+      id: "circle",
+      tag: "span",
+    },
+  ];
 
-    set age(age) {
-      if (typeof age === "number" && age > 0 && age < 100) {
-        this._age = age;
-      } else {
-        console.log("Error");
-      }
-    }
-  }
-	const igor = new User("Igor", 25);
-	console.log(igor.age, igor.name);
-	igor.age = 31;
-	igor.surname = 'Topaz';
-	console.log(igor.surname);
-	console.log(igor.age);
+  try{
+		data.forEach((blockObj, i) => {
+			const block = document.createElement(blockObj.tag);
+	
+			if (blockObj.id) throw new SyntaxError(`Data number ${i + 1} have no id`);
+			block.setAttribute("id", blockObj.id);
+			document.body.append(block);
+		});
+	}catch(e){
+		if (e.name === "SyntaxError") {
+			console.log(e.message);
+		} else throw e;
+	}
+
+	const err = new SyntaxError("Some text");
+	console.log(err.name, err.message, err.stack);
 });
