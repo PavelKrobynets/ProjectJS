@@ -1,4 +1,5 @@
 "use strict";
+import $ from 'jquery';
 
 document.addEventListener("DOMContentLoaded", () => {
   /*
@@ -648,37 +649,52 @@ try{
 catch(e){
 	console.log(e);
 }
+
+const data = [
+	{
+		id: "box",
+		tag: "div",
+	},
+	{
+		id: "",
+		tag: "nav",
+	},
+	{
+		id: "circle",
+		tag: "span",
+	},
+];
+
+try{
+	data.forEach((blockObj, i) => {
+		const block = document.createElement(blockObj.tag);
+		
+		if (blockObj.id) throw new SyntaxError(`Data number ${i + 1} have no id`);
+		block.setAttribute("id", blockObj.id);
+		document.body.append(block);
+	});
+}catch(e){
+	if (e.name === "SyntaxError") {
+		console.log(e.message);
+	} else throw e;
+}
+
+const err = new SyntaxError("Some text");
+console.log(err.name, err.message, err.stack);
 */
 
-  const data = [
-    {
-      id: "box",
-      tag: "div",
-    },
-    {
-      id: "",
-      tag: "nav",
-    },
-    {
-      id: "circle",
-      tag: "span",
-    },
-  ];
+$(".btn-item:first").hover(function(){
+	$(this).toggleClass("active");
+})
 
-  try{
-		data.forEach((blockObj, i) => {
-			const block = document.createElement(blockObj.tag);
-	
-			if (blockObj.id) throw new SyntaxError(`Data number ${i + 1} have no id`);
-			block.setAttribute("id", blockObj.id);
-			document.body.append(block);
-		});
-	}catch(e){
-		if (e.name === "SyntaxError") {
-			console.log(e.message);
-		} else throw e;
-	}
+$('.btn-item:eq(2)').on('click', function(){
+	$(".btn-item:eq(3)").fadeToggle('slow');
+});
 
-	const err = new SyntaxError("Some text");
-	console.log(err.name, err.message, err.stack);
+$('.btn-item:eq(4)').on('click', function(){
+	$(".btn-item:eq(5)").animate({
+		opacity: 'toggle',
+		height: 'toggle'
+	}, 2000);
+})
 });

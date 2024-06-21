@@ -13,7 +13,8 @@
   "author": "krobynets pavel",
   "license": "ISC",
   "dependencies": {
-    "gulp-cli": "^2.3.0"
+    "gulp-cli": "^2.3.0",
+    "jquery": "^3.7.1"
   },
   "devDependencies": {
     "browser-sync": "^2.29.3",
