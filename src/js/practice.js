@@ -1,5 +1,8 @@
 "use strict";
 import $ from 'jquery';
+// yourScript.js
+// yourScript.js
+import { tns } from "../../node_modules/tiny-slider/src/tiny-slider.js"
 
 document.addEventListener("DOMContentLoaded", () => {
   /*
@@ -681,7 +684,6 @@ try{
 
 const err = new SyntaxError("Some text");
 console.log(err.name, err.message, err.stack);
-*/
 
 $(".btn-item:first").hover(function(){
 	$(this).toggleClass("active");
@@ -697,4 +699,37 @@ $('.btn-item:eq(4)').on('click', function(){
 		height: 'toggle'
 	}, 2000);
 })
+
+function* generator() {
+	yield "S";
+	yield 'c';
+	yield 'r';
+	yield 'i';
+	yield 'p';
+	yield 't';
+}
+
+const str = generator();
+console.log(str.next());
+console.log(str.next());
+console.log(str.next());
+*/
+
+console.log(1);
+setTimeout(() =>{
+	console.log("timeout");
+}, 2000);
+setTimeout(() =>{
+	console.log("timeout_404");
+}, 4000);
+
+console.log(2);
+
+tns({
+	container: '.my-slider',
+	items: 1,
+	slideBy: 'page',
+	autoplay: true,
+	fixedWidth: 500,
+});
 });
